@@ -8,6 +8,7 @@ public class ItemDegraderFactory {
             case "Aged Brie" -> new AgedBrieDegrader(item);
             case "Backstage passes to a TAFKAL80ETC concert" -> new BackstagePassesDegrader(item);
             case "Sulfuras, Hand of Ragnaros" -> new SulfurasItemDegrader(item);
+            case "Conjured Mana Cake" -> new ConjuredItemDegrader(item);
             default -> new NormalItemDegrader(item);
         };
     }
