@@ -17,26 +17,27 @@ class GildedRose {
                 case "Backstage passes to a TAFKAL80ETC concert":
                     updateBackstagePasses(item);
                     break;
+                case "Sulfuras, Hand of Ragnaros":
+                    updateSulfuras(item);
+                    break;
                 default:
                     if (item.quality > 0) {
-                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                            item.quality = item.quality - 1;
-                        }
+                        item.quality = item.quality - 1;
                     }
 
-                    if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                        item.sellIn = item.sellIn - 1;
-                    }
+                    item.sellIn = item.sellIn - 1;
 
                     if (item.sellIn < 0) {
                         if (item.quality > 0) {
-                            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                                item.quality = item.quality - 1;
-                            }
+                            item.quality = item.quality - 1;
                         }
                     }
             }
         }
+    }
+
+    private void updateSulfuras(Item item) {
+        // nothing to do
     }
 
     private void updateBackstagePasses(Item item) {
