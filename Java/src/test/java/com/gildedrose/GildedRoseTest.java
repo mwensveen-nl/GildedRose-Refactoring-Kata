@@ -82,4 +82,41 @@ class GildedRoseTest {
         assertEquals(5, app.items[0].sellIn);
         assertEquals(10, app.items[0].quality);
     }
+
+    @Test
+    void backstage() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 12, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].name);
+        assertEquals(11, app.items[0].sellIn);
+        assertEquals(11, app.items[0].quality);
+        app.updateQuality();
+        assertEquals(10, app.items[0].sellIn);
+        assertEquals(12, app.items[0].quality);
+        app.updateQuality();
+        assertEquals(9, app.items[0].sellIn);
+        assertEquals(14, app.items[0].quality);
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        assertEquals(5, app.items[0].sellIn);
+        assertEquals(22, app.items[0].quality);
+        app.updateQuality();
+        assertEquals(4, app.items[0].sellIn);
+        assertEquals(25, app.items[0].quality);
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        assertEquals(0, app.items[0].sellIn);
+        assertEquals(37, app.items[0].quality);
+        app.updateQuality();
+        assertEquals(-1, app.items[0].sellIn);
+        assertEquals(0, app.items[0].quality);
+        app.updateQuality();
+        assertEquals(-2, app.items[0].sellIn);
+        assertEquals(0, app.items[0].quality);
+    }
 }
