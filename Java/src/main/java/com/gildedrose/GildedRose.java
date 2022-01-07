@@ -27,17 +27,7 @@ class GildedRose {
     }
 
     private void updateNormal(Item item) {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
-
-        item.sellIn = item.sellIn - 1;
-
-        if (item.sellIn < 0) {
-            if (item.quality > 0) {
-                item.quality = item.quality - 1;
-            }
-        }
+        new NormalItemDegrader(item).degrade();
     }
 
     private void updateSulfuras(Item item) {
