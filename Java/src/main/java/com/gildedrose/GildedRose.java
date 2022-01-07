@@ -31,7 +31,7 @@ class GildedRose {
     }
 
     private void updateSulfuras(Item item) {
-        // nothing to do
+        new SulfurasItemDegrader(item).degrade();
     }
 
     private void updateBackstagePasses(Item item) {
