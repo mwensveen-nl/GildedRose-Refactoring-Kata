@@ -1,14 +1,13 @@
 package com.gildedrose;
 
-public class BackstagePassesDegrader implements ItemDegrader {
-    private final Item item;
+public class BackstagePassesDegrader extends AbstractItemDegrader implements ItemDegrader {
 
     public BackstagePassesDegrader(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
-    public void degrade() {
+    public void degrade(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
             if (item.sellIn < 11) {

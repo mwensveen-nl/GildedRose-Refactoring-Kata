@@ -1,15 +1,13 @@
 package com.gildedrose;
 
-public class NormalItemDegrader implements ItemDegrader {
-
-    private final Item item;
+public class NormalItemDegrader extends AbstractItemDegrader implements ItemDegrader {
 
     public NormalItemDegrader(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
-    public void degrade() {
+    protected void degrade(Item item) {
         if (item.quality > 0) {
             item.quality = item.quality - 1;
         }
@@ -21,7 +19,6 @@ public class NormalItemDegrader implements ItemDegrader {
                 item.quality = item.quality - 1;
             }
         }
-
     }
 
 }

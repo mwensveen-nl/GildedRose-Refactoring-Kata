@@ -1,14 +1,13 @@
 package com.gildedrose;
 
-public class AgedBrieDegrader implements ItemDegrader {
-    private final Item item;
+public class AgedBrieDegrader extends AbstractItemDegrader implements ItemDegrader {
 
     public AgedBrieDegrader(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
-    public void degrade() {
+    protected void degrade(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
@@ -18,6 +17,7 @@ public class AgedBrieDegrader implements ItemDegrader {
                 item.quality = item.quality + 1;
             }
         }
+
     }
 
 }

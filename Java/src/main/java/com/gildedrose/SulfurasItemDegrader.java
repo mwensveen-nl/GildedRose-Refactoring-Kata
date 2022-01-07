@@ -1,15 +1,13 @@
 package com.gildedrose;
 
-public class SulfurasItemDegrader implements ItemDegrader {
-
-    private final Item item;
+public class SulfurasItemDegrader extends AbstractItemDegrader implements ItemDegrader {
 
     public SulfurasItemDegrader(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
-    public void degrade() {
+    protected void degrade(Item item) {
         // nothing to do
     }
 
